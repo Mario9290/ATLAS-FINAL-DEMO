@@ -1,93 +1,85 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Accessibility Fixes Demo</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      padding: 20px;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav li {
-      display: inline;
-      margin-right: 15px;
-    }
-    nav a {
-      text-decoration: none;
-      color: #1a1a1a;
-    }
-    nav a:focus, button:focus, input:focus {
-      outline: 3px solid #FFA500;
-      outline-offset: 2px;
-    }
-    .nav-dropdown {
-      background-color: #ffffff;
-      color: #1a1a1a;
-    }
-    .section {
-      margin-top: 40px;
-    }
-    form {
-      margin-top: 10px;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-    input[type="email"] {
-      padding: 8px;
-      width: 300px;
-      margin-bottom: 10px;
-    }
-    button {
-      padding: 10px 15px;
-      background-color: #004080;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #002850;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Animal Aid – Helping Animals Through Global Donations</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <h1>Helping Animals Through Global Donations</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Project Animal Aid</h1>
+      <nav role="navigation" aria-label="Main menu">
+        <ul class="nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#mission">Our Mission</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#partners">Our Partners</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <nav role="navigation" aria-label="Main menu">
-    <ul class="nav-dropdown">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Partners</a></li>
-      <li><a href="#">Donate</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+  <main id="main" class="container">
+    <section class="hero" aria-label="Hero image">
+      <img src="images/lion-banner.jpg"
+           alt="Veterinarian caring for a lion at a wildlife rescue center" />
+    </section>
 
-  <div class="section">
-    <h2>Our Mission</h2>
-    <p>We connect veterinary equipment donors with clinics and shelters worldwide.</p>
-  </div>
+    <section id="mission">
+      <h2>Our Mission</h2>
+      <p>
+        We connect veterinary equipment donors with clinics and shelters worldwide.
+        By redistributing vital tools and resources, we help improve animal health
+        and welfare in underserved communities across the globe.
+      </p>
+    </section>
 
-  <div class="section">
-    <h2>Image with Descriptive Alt Text</h2>
-    <img src="https://via.placeholder.com/400x200" alt="Veterinarian caring for lion at wildlife rescue center" width="400">
-  </div>
+    <section id="donate">
+      <h2>How You Can Help</h2>
+      <p>
+        We accept gently used veterinary equipment, supplies, and monetary
+        contributions to support animal-health organizations in need.
+      </p>
+      <a class="btn donate-btn" href="#" aria-label="Donate to Project Animal Aid">Donate Now</a>
+    </section>
 
-  <div class="section">
-    <h2>Newsletter Signup Form</h2>
-    <form>
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
+    <section id="partners">
+      <h2>Our Partners</h2>
+      <div class="partners" role="list">
+        <img role="listitem" src="images/left-hand-animal-hospital.png" alt="Left Hand Animal Hospital" />
+        <img role="listitem" src="images/one-percent-planet.png" alt="1% for the Planet" />
+        <img role="listitem" src="images/kong.png" alt="KONG pet products" />
+        <img role="listitem" src="images/in-clover.png" alt="InClover Research" />
+        <img role="listitem" src="images/officiency.png" alt="Officiency Consulting" />
+      </div>
+    </section>
 
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Us</h2>
+      <form class="newsletter" action="#" method="post">
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" required aria-required="true" />
+        </div>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+
+      <address class="org-meta">
+        1630A 30th Street, #256, Boulder, CO 80301 • 303-819-2501 •
+        <a href="mailto:info@projectanimalaid.org">info@projectanimalaid.org</a>
+      </address>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Project Animal Aid. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
