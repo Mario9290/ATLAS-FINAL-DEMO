@@ -1,0 +1,78 @@
+/* Base / tokens */
+:root{
+  --bg:#ffffff;
+  --ink:#1a1a1a;
+  --brand:#004080;          /* dark blue */
+  --accent:#FFA500;         /* orange: high-contrast CTA */
+  --muted:#f2f2f2;
+  --focus:#ffbf47;          /* WCAG-visible focus */
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  font-size:18px;
+}
+
+/* Skip link */
+.skip-link{
+  position:absolute; left:-9999px; top:auto;
+  width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  position:static; width:auto; height:auto;
+  padding:.5rem 1rem; background:var(--accent); color:#000;
+}
+
+/* Layout */
+.container{max-width:1000px; margin:0 auto; padding:1rem}
+img{max-width:100%; height:auto}
+
+/* Header / Nav */
+.site-header{background:var(--brand); color:#fff}
+.site-title{margin:0 0 .5rem 0; font-size:1.5rem}
+.nav{list-style:none; display:flex; gap:1rem; padding:0; margin:0 0 .25rem 0; flex-wrap:wrap}
+.nav a{
+  color:#fff; text-decoration:none; font-weight:700; padding:.25rem .5rem; border-radius:.25rem;
+}
+.nav a:focus, .nav a:hover{
+  outline:3px solid var(--focus); outline-offset:2px; background:rgba(255,255,255,.12);
+}
+
+/* Sections */
+h2{margin-top:2rem; font-size:1.6rem}
+.hero{margin-top:1rem}
+.partners{display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:center}
+.partners img{max-height:80px}
+
+/* Forms */
+.field{display:flex; flex-direction:column; gap:.25rem; margin:.75rem 0}
+input, button, a.btn{
+  font:inherit;
+  border:2px solid var(--ink);
+  padding:.6rem .8rem; border-radius:.4rem;
+}
+input:focus, button:focus, a.btn:focus{
+  outline:3px solid var(--focus); outline-offset:2px;
+}
+
+/* Buttons */
+.btn{background:#fff; cursor:pointer}
+.donate-btn{
+  background:var(--accent); border-color:var(--accent); color:#000; font-weight:700;
+}
+.donate-btn:hover, .donate-btn:focus{background:#cc8400; border-color:#cc8400}
+
+/* Footer */
+.site-footer{background:var(--muted); margin-top:2rem; padding:1rem 0; font-size:.95rem}
+
+/* Responsive */
+@media (max-width:640px){
+  .site-title{font-size:1.25rem}
+  .nav{gap:.5rem}
+}
